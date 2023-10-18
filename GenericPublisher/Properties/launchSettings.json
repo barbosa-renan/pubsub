@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "GenericPublisher": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "RABBITMQ_EXCHANGE": "_____teste",
+        "RABBITMQ_MAX": "10000"
+      }
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

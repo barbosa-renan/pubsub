@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  genericpublisher:
+    image: ${DOCKER_REGISTRY-}genericpublisher
+    build:
+      context: .
+      dockerfile: GenericPublisher/Dockerfile
+    environment:
+        - RABBITMQ_EXCHANGE=_____teste
+        - RABBITMQ_ROUNTINGKEY=teste.update
+        - RABBITMQ_MAX=100000
+        - RABBITMQ_HOST=masterclassrabbitmq
+    networks:
+        - rabbit
+
+networks:
+  rabbit:
+    external: true
+  
